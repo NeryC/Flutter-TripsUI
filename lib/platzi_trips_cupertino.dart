@@ -5,27 +5,28 @@ import 'search_trips.dart';
 import 'profile_trips.dart';
 
 class PlatziTripsCupertino extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     return Scaffold(
       bottomNavigationBar: CupertinoTabScaffold(
         tabBar: CupertinoTabBar(
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home, color: Colors.indigo),
-              label: ""
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search, color: Colors.indigo),
-              label: ""
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person, color: Colors.indigo),
-              label: ""
-            ),
-          ]
+            items: [
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.home, color: Colors.indigo),
+                  title: Text("")
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.search, color: Colors.indigo),
+                  title: Text("")
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.person, color: Colors.indigo),
+                  title: Text("")
+              ),
+            ]
         ),
+
         tabBuilder: (BuildContext context, int index) {
           switch (index) {
             case 0:
@@ -43,13 +44,12 @@ class PlatziTripsCupertino extends StatelessWidget {
                 builder: (BuildContext context) => ProfileTrips(),
               );
               break;
-            default:
-              return CupertinoTabView(
-                builder: (BuildContext context) => HomeTrips(),
-              );;
+
           }
+
         },
-      )
+      ),
     );
   }
+
 }
